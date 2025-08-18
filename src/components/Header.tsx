@@ -21,7 +21,7 @@ const Header = () => {
             <img
               src="/Images/logo.png"
               alt="Gulf Trade Marks Logo"
-              className="h-56 w-auto"
+              className="h-48 w-auto"
             />
           </div>
 
