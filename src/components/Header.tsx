@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -17,14 +17,12 @@ const Header = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Shield className="w-7 h-7 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Gulf Trade Marks</h1>
-              <p className="text-xs text-muted-foreground">& Commercial Data LLC</p>
-            </div>
+          <div className="flex items-center">
+            <img
+              src="/Images/logo.png"
+              alt="Gulf Trade Marks Logo"
+              className="h-64 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}

@@ -25,14 +25,20 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                <Shield className="w-7 h-7 text-accent-foreground" />
+            <div className="flex items-center bg- space-x-3 mb-6">
+              <div className="w-64 h-12  rounded-lg flex items-center justify-center">
+               <div className="flex items-center">
+            <img
+              src="/Images/logo.png"
+              alt="Gulf Trade Marks Logo"
+              className="h-64 w-auto"
+            />
+          </div>
               </div>
-              <div>
+              {/* <div>
                 <h3 className="text-xl font-bold">Gulf Trade Marks</h3>
                 <p className="text-sm text-primary-foreground/80">& Commercial Data LLC</p>
-              </div>
+              </div> */}
             </div>
             <p className="text-primary-foreground/90 mb-6 leading-relaxed">
               Leading intellectual property services company in Oman, protecting your valuable 
