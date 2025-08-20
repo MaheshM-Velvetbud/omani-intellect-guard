@@ -1,19 +1,28 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" }
+    { name: t("home"), href: "#home" },
+    { name: t("services"), href: "#services" },
+    { name: t("about"), href: "#about" },
+    { name: t("blog"), href: "#blog" },
+    { name: t("contact"), href: "#contact" }
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
+    <header className="relative md:fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -21,7 +30,7 @@ const Header = () => {
             <img
               src="/Images/logo.png"
               alt="Gulf Trade Marks Logo"
-              className="h-48 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
           </div>
 
@@ -38,10 +47,27 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Switcher & CTA Button */}
+          <div className="hidden md:flex items-center space-x-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Languages className="w-4 h-4" />
+                  {language === 'en' ? 'EN' : 'AR'}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLanguage('en')}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLanguage('ar')}>
+                  العربية
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <Button className="bg-gradient-primary hover:opacity-90 font-semibold">
-              Get Consultation
+              {t("consultation")}
             </Button>
           </div>
 
@@ -72,9 +98,26 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="pt-4">
+              <div className="pt-4 space-y-3">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-full gap-2">
+                      <Languages className="w-4 h-4" />
+                      {language === 'en' ? 'English' : 'العربية'}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-full">
+                    <DropdownMenuItem onClick={() => setLanguage('en')}>
+                      English
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setLanguage('ar')}>
+                      العربية
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                
                 <Button className="w-full bg-gradient-primary hover:opacity-90 font-semibold">
-                  Get Consultation
+                  {t("consultation")}
                 </Button>
               </div>
             </nav>
