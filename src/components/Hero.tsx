@@ -55,7 +55,7 @@ const Hero = () => {
             <Button variant="secondary" size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-4 text-lg">
               {t("getStarted")}
             </Button>
-            <Button variant="outline" size="lg" className="border-white/30 text-primary-foreground hover:bg-white/10 font-semibold px-8 py-4 text-lg">
+            <Button variant="outline" size="lg" className="border-white/30 bg-gray-600 text-primary-foreground hover:bg-white/10 font-semibold px-8 py-4 text-lg">
               {t("learnMore")}
             </Button>
           </div>

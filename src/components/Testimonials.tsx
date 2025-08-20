@@ -1,150 +1,154 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-
-const testimonials = {
-  en: [
-    {
-      name: "Ahmed Al-Rashid",
-      company: "Al-Rashid Trading LLC",
-      content: "Gulf Trade Marks provided exceptional service in protecting our brand. Their monitoring system detected violations quickly, and their team acted promptly to resolve issues. Highly recommended!",
-      rating: 5,
-      position: "CEO"
-    },
-    {
-      name: "Sarah Mohammed",
-      company: "Innovative Solutions Co.",
-      content: "The comprehensive IP portfolio management has been invaluable for our business. The team's expertise in international trademark law is outstanding.",
-      rating: 5,
-      position: "Legal Director"
-    },
-    {
-      name: "Omar Al-Balushi",
-      company: "Heritage Crafts",
-      content: "Professional, reliable, and thorough. They helped us register our traditional craft designs and provided continuous monitoring services. Excellent work!",
-      rating: 5,
-      position: "Founder"
-    },
-    {
-      name: "Fatima Al-Zahra",
-      company: "Modern Enterprises",
-      content: "Their 24/7 monitoring service gave us peace of mind. When counterfeit products appeared in the market, they immediately alerted us and helped take action.",
-      rating: 5,
-      position: "Brand Manager"
-    },
-    {
-      name: "Khalid Al-Mandhari",
-      company: "Tech Innovations",
-      content: "Gulf Trade Marks' expert consultation helped us navigate complex international patent applications. Their knowledge and professionalism are unmatched.",
-      rating: 5,
-      position: "CTO"
-    }
-  ],
-  ar: [
-    {
-      name: "أحمد الراشد",
-      company: "شركة الراشد التجارية المحدودة",
-      content: "قدمت شركة الخليج للعلامات التجارية خدمة استثنائية في حماية علامتنا التجارية. نظام المراقبة الخاص بهم اكتشف الانتهاكات بسرعة، وتصرف فريقهم بسرعة لحل المشاكل. أنصح بشدة!",
-      rating: 5,
-      position: "الرئيس التنفيذي"
-    },
-    {
-      name: "سارة محمد",
-      company: "شركة الحلول المبتكرة",
-      content: "إدارة محفظة الملكية الفكرية الشاملة كانت لا تقدر بثمن لأعمالنا. خبرة الفريق في قانون العلامات التجارية الدولي متميزة.",
-      rating: 5,
-      position: "مدير قانوني"
-    },
-    {
-      name: "عمر البلوشي", 
-      company: "الحرف التراثية",
-      content: "مهنية وموثوقية وشمولية. ساعدونا في تسجيل تصاميم الحرف التقليدية وقدموا خدمات مراقبة مستمرة. عمل ممتاز!",
-      rating: 5,
-      position: "المؤسس"
-    },
-    {
-      name: "فاطمة الزهراء",
-      company: "المؤسسات الحديثة", 
-      content: "خدمة المراقبة على مدار الساعة أعطتنا راحة البال. عندما ظهرت منتجات مقلدة في السوق، نبهونا فوراً وساعدوا في اتخاذ الإجراءات.",
-      rating: 5,
-      position: "مدير العلامة التجارية"
-    },
-    {
-      name: "خالد المندهري",
-      company: "الابتكارات التقنية",
-      content: "استشارة خبراء الخليج للعلامات التجارية ساعدتنا في التنقل عبر طلبات براءات الاختراع الدولية المعقدة. معرفتهم ومهنيتهم لا مثيل لها.",
-      rating: 5,
-      position: "مدير التقنية"
-    }
-  ]
-};
-
-const Testimonials = () => {
-  const { language, t } = useLanguage();
-  const currentTestimonials = testimonials[language];
-
+"use client"
+import React from "react";
+import styled, { keyframes, css } from "styled-components";
+import { row1, row2 } from "./Data"; 
+const Moving = () => {
+    
+    
   return (
-    <section className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            {t("testimonialsTitle")}
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {t("testimonialsSubtitle")}
-          </p>
-        </div>
+    
+    <AppContainer>
+    <Wrapper>
+      <Text>Our Partners are Associated with
+      </Text>
+      {/* <Note>Revolutionize your Business with Our Advanced Technology Solutions</Note> */}
+      <Marquee>
+        <MarqueeGroup>
+  {row1.map((el, index) => (
+    <ImageGroup key={index}>
+      <Image src={el} alt={`Image ${index}`} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
 
-        <div className="max-w-6xl mx-auto">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {currentTestimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                    <CardContent className="p-6 h-full flex flex-col">
-                      <div className="flex items-center mb-4">
-                        <Quote className="w-8 h-8 text-accent mr-3 flex-shrink-0" />
-                        <div className="flex space-x-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
-                        "{testimonial.content}"
-                      </p>
-                      
-                      <div className="mt-auto">
-                        <div className="font-semibold text-foreground">{testimonial.name}</div>
-                        <div className="text-sm text-muted-foreground">{testimonial.position}</div>
-                        <div className="text-sm text-primary font-medium">{testimonial.company}</div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-        </div>
-      </div>
-    </section>
+<MarqueeGroup>
+  {row1.map((el, index) => (
+    <ImageGroup key={index}>
+      <Image src={el} alt={`Image ${index}`} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup>
+
+      </Marquee>
+      <Marquee>
+      <MarqueeGroup2>
+  {row2.map((le, index) => (
+    <ImageGroup key={index}>
+      <Image src={le} alt={`Image ${index}`} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup2>
+<MarqueeGroup2>
+  {row2.map((le, index) => (
+    <ImageGroup key={index}>
+      <Image src={le} alt={`Image ${index}`} />
+    </ImageGroup>
+  ))}
+</MarqueeGroup2>
+      </Marquee>
+    </Wrapper>
+  </AppContainer>
+);
+}
+
+export default Moving
+
+
+const AppContainer = styled.div`
+  width: 100vw;
+  height: 70vh;
+  color: #000000;
+ overflow:hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const Text = styled.div`
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #02203c;
+  text-4xl md:text-5xl font-bold mb-6 text-foreground
+  
+`;
+
+// const Note = styled.div`
+//   font-size: 18px;
+//   font-weight: 200;
+//   margin-bottom: 40px;
+//   color: dark blue;
+//   margin-left:40px;
+// `;
+
+const Marquee = styled.div`
+  display: flex;
+  width: 1200px;
+  overflow: hidden;
+  user-select: none;
+
+  mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
   );
-};
+`;
 
-export default Testimonials;
+const scrollX = keyframes`
+  from {
+    left: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+
+const common = css`
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  width: 100%;
+  animation: ${scrollX} 30s linear infinite;
+`;
+
+const MarqueeGroup = styled.div`
+  ${common}
+`;
+const MarqueeGroup2 = styled.div`
+  ${common}
+  animation-direction: reverse;
+  animation-delay: -3s;
+`;
+
+const ImageGroup = styled.div`
+  display: grid;
+  place-items: center;
+  width: clamp(10rem, 1rem + 40vmin, 30rem);
+  padding: calc(clamp(10rem, 1rem + 30vmin, 30rem) / 10);
+`;
+
+const Image = styled.img`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  border-radius: 0.5rem;
+  aspect-ratio: 16/9;
+  padding: 5px 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+`;
