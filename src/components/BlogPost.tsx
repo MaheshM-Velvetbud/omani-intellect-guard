@@ -14,7 +14,7 @@
        useEffect(() => {
          const fetchPost = async () => {
            try {
-             const response = await fetch(`http://localhost:1337/api/blog-posts?filters[documentId][$eq]=${documentId}&populate=*`);
+             const response = await fetch(`https://strapi.velvetbud.in/api/gulftrade-blogposts?filters[documentId][$eq]=${documentId}&populate=*`);
              const data = await response.json();
              if (data.data.length > 0) {
                setPost(data.data[0]);
@@ -36,7 +36,7 @@
        return (
         <>
        <Header/>
-      <div className="min-h-screen bg-gradient-to-b pt-32 from-blue-50 to-white">
+      <div className="min-h-screen bg-gradient-to-b pt-32 py-32 from-blue-50 to-white">
       <div className="container mx-auto px-4 py-12 lg:px-8">
         <button
           onClick={() => navigate('/#blog')}
@@ -52,7 +52,7 @@
             {/* Hero Section */}
             <div className="relative mb-8">
               <img
-                src={`http://localhost:1337${post.featuredImage[0].url}`}
+                src={`https://strapi.velvetbud.in${post.image[0].url}`}
                 alt={post.title}
                 className="w-full h-[500px] object-cover rounded-xl shadow-xl transition duration-300 hover:shadow-2xl"
               />

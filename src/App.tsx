@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { BrowserRouter as Router} from 'react-router-dom';
 import BlogPost from './components/BlogPost'
-import BlogVideo from "./components/BlogVideo";
+
 
 import Blog from './components/Blog';
 
