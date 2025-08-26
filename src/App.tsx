@@ -6,6 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import { BrowserRouter as Router} from 'react-router-dom';
+import BlogPost from './components/BlogPost'
+import BlogVideo from "./components/BlogVideo";
+
+import Blog from './components/Blog';
 
 const queryClient = new QueryClient();
 
@@ -20,7 +25,12 @@ const App = () => (
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
+        <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:documentId" element={<BlogPost />} />
+            
           </Routes>
+
+
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
