@@ -73,9 +73,9 @@ const Services = () => {
                 </CardDescription>
                 <ul className={`space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {service.featureKeys.map((featureKey, featureIndex) => (
-                    <li key={featureIndex} className={`flex items-start text-sm text-muted-foreground ${language === 'ar' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
+                    <li key={featureIndex} className={`flex items-start text-sm text-muted-foreground ${language === 'ar' ? 'flex-row-reverse justify-start' : 'flex-row justify-start'}`}>
                       <div className={`w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2 ${language === 'ar' ? 'ml-3 mr-0' : 'mr-3 ml-0'}`}></div>
-                      <span className={language === 'ar' ? 'text-right' : 'text-left'}>
+                      <span className={`${language === 'ar' ? 'text-right flex-1' : 'text-left flex-1'}`}>
                         {t(featureKey)}
                       </span>
                     </li>
