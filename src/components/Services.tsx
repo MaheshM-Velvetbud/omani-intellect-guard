@@ -73,7 +73,7 @@ const Services = () => {
                 </CardDescription>
                 <ul className={`space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {service.featureKeys.map((featureKey, featureIndex) => (
-                    <li key={featureIndex} className={`flex items-start text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'justify-end' : 'justify-start'}`}>
+                    <li key={featureIndex} className={`flex items-start text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'justify-end w-full text-right' : 'justify-start text-left'}`}>
                       {language === 'ar' ? (
                         <>
                           <span className="text-right">{t(featureKey)}</span>
