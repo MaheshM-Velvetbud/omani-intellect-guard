@@ -1,22 +1,25 @@
 import { Shield, Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { language, t } = useLanguage();
+
   const services = [
-    "Trademark Registration",
-    "Patent Protection",
-    "Brand Monitoring",
-    "IP Consultation",
-    "Design Protection",
-    "Violation Response"
+    t("serviceTrademarkRegistration"),
+    t("servicePatentProtection"),
+    t("serviceBrandMonitoring"),
+    t("serviceIpConsultation"),
+    t("serviceDesignProtection"),
+    t("serviceViolationResponse")
   ];
 
   const quickLinks = [
-    "About Us",
-    "Our Services",
-    "Contact",
-    "Privacy Policy",
-    "Terms of Service",
-    "Emergency Support"
+    t("aboutUs"),
+    t("ourServices"),
+    t("contactUs"),
+    t("privacyPolicy"),
+    t("termsOfService"),
+    t("emergencySupport")
   ];
 
   return (
@@ -40,20 +43,19 @@ const Footer = () => {
                 <p className="text-sm text-primary-foreground/80">& Commercial Data LLC</p>
               </div> */}
             </div>
-            <p className="text-primary-foreground/90 mb-6 leading-relaxed">
-              Leading intellectual property services company in Oman, protecting your valuable 
-              assets with comprehensive trademark, patent, and brand monitoring solutions.
+            <p className={`text-primary-foreground/90 mb-6 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              {t("footerCompanyDesc")}
             </p>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/90">Al Khuwair, Sultanate of Oman</span>
+                <span className="text-primary-foreground/90">{t("addressShort")}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent" />
                 <span className="text-primary-foreground/90">(+968) 24784640</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent" />
                 <span className="text-primary-foreground/90">Rayeez@rajbasso.com</span>
               </div>
@@ -62,7 +64,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
+            <h4 className={`text-lg font-semibold mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>{t("footerOurServices")}</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -76,7 +78,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className={`text-lg font-semibold mb-6 ${language === 'ar' ? 'text-right' : 'text-left'}`}>{t("footerQuickLinks")}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -92,10 +94,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/80 text-sm">
-            © 2024 Gulf Trade Marks & Commercial Data LLC. All rights reserved.
+            {t("footerCopyright")}
           </p>
           <p className="text-primary-foreground/80 text-sm mt-4 md:mt-0">
-            Licensed by the Sultanate of Oman Ministry of Commerce & Industry
+            {t("footerLicensedBy")}
           </p>
         </div>
       </div>

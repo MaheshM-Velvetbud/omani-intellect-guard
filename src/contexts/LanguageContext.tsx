@@ -127,8 +127,28 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "Client Testimonials",
-    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services"
-  },
+    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services",
+
+    // Footer
+    footerCompanyDesc: "Leading IP services company in Oman, protecting your assets with trademark, patent and monitoring solutions.",
+    footerOurServices: "Our Services",
+    footerQuickLinks: "Quick Links",
+    serviceTrademarkRegistration: "Trademark Registration",
+    servicePatentProtection: "Patent Protection",
+    serviceBrandMonitoring: "Brand Monitoring",
+    serviceIpConsultation: "IP Consultation",
+    serviceDesignProtection: "Design Protection",
+    serviceViolationResponse: "Violation Response",
+    aboutUs: "About Us",
+    ourServices: "Our Services",
+    contactUs: "Contact",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    emergencySupport: "Emergency Support",
+    footerLicensedBy: "Licensed by the Sultanate of Oman Ministry of Commerce & Industry",
+    footerCopyright: "© 2024 Gulf Trade Marks & Commercial Data LLC. All rights reserved.",
+    addressShort: "Al Khuwair, Sultanate of Oman"
+    },
   ar: {
     // Navigation
     home: "الرئيسية",
@@ -247,8 +267,28 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "شهادات العملاء",
-    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا"
-  }
+    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا",
+
+    // Footer
+    footerCompanyDesc: "شركة رائدة في خدمات الملكية الفكرية في عُمان، نحمي أصولك عبر حلول التسجيل والبراءات والمراقبة.",
+    footerOurServices: "خدماتنا",
+    footerQuickLinks: "روابط سريعة",
+    serviceTrademarkRegistration: "تسجيل العلامات التجارية",
+    servicePatentProtection: "حماية براءات الاختراع",
+    serviceBrandMonitoring: "مراقبة العلامة التجارية",
+    serviceIpConsultation: "استشارات الملكية الفكرية",
+    serviceDesignProtection: "حماية التصاميم",
+    serviceViolationResponse: "الاستجابة للانتهاكات",
+    aboutUs: "من نحن",
+    ourServices: "خدماتنا",
+    contactUs: "اتصل بنا",
+    privacyPolicy: "سياسة الخصوصية",
+    termsOfService: "شروط الخدمة",
+    emergencySupport: "دعم الطوارئ",
+    footerLicensedBy: "مرخص من وزارة التجارة والصناعة في سلطنة عُمان",
+    footerCopyright: "© 2024 شركة الخليج للعلامات التجارية والبيانات التجارية. جميع الحقوق محفوظة.",
+    addressShort: "الخوير، سلطنة عُمان"
+   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
