@@ -22,7 +22,7 @@ const Services = () => {
       icon: Database,
       titleKey: "informationPortfolio",
       descKey: "informationPortfolioDesc",
-      featureKeys: ["secureStorage", "easyAccess", "docManagement", "portfolioAnalytics"]
+      featureKeys: ["secureStorage", "easyAccess", "docManagement", ]
     },
     {
       icon: Users,

@@ -30,7 +30,7 @@ const Header = () => {
             <img
               src="/Images/gulftradelogo.png"
               alt="Gulf Trade Marks Logo"
-              className="h-36 md:h-42  w-auto"
+              className="h-40 md:h-44  w-auto"
             />
           </div>
 

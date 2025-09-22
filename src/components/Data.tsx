@@ -1,20 +1,22 @@
 export const row1 = [
-    "/Images/clientimage/food company.jpg",
-    "/Images/clientimage/2client.jpg",
-    "/Images/clientimage/client3.png",
-    "/Images/clientimage/client4.gif",
-   "/Images/clientimage/client5.jpg",
-   "/Images/clientimage/client12.png",
+    "/Images/mazoonlogo.jpg",
+    "/Images/idf.png",
+    "/Images/afag.png",
+    "/Images/aes.png",
+   "/Images/asa.png",
+   "/Images/dana.png",
+   "/Images/simak.png"
    
   ];
   
   export const row2 = [
-    "/Images/clientimage/client6.png",
-    "/Images/clientimage/client7.jpg",
-   "/Images/clientimage/client8.png",
-   "/Images/clientimage/client9.jpg",
-    "/Images/clientimage/client10.jpg",
-    "/Images/clientimage/client11.png",
-    
-    "/Images/clientimage/client13.jpg",
+    "/Images/gslogo.png",
+    "/Images/idf.png",
+   "/Images/jasmine.png",
+   "/Images/kottakkal.png",
+    "/Images/mtm.png",
+    "/Images/nh.png",
+    "/Images/oman.png",
+    // "/Images/toolgram.png",
+    // "/Images/ses.png",
   ];

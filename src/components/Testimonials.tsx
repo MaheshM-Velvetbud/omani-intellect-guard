@@ -75,13 +75,30 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+// const Text = styled.div`
+//   font-size: 60px;
+//   font-weight: 600;
+//   margin-bottom: 10px;
+//   color: #02203c;
+//   text-4xl md:text-5xl font-bold mb-6 text-foreground
+  
+// `;
 const Text = styled.div`
-  font-size: 60px;
+  font-size: clamp(1.5rem, 4vw, 3.75rem); /* Responsive font size */
   font-weight: 600;
   margin-bottom: 10px;
   color: #02203c;
   text-4xl md:text-5xl font-bold mb-6 text-foreground
-  
+
+  @media (max-width: 640px) {
+    font-size: 1.5rem; /* Smaller size for small screens */
+  }
+  @media (min-width: 641px) and (max-width: 1024px) {
+    font-size: 2.5rem; /* Medium size for tablets */
+  }
+  @media (min-width: 1025px) {
+    font-size: 3.75rem; /* Larger size for desktops */
+  }
 `;
 
 // const Note = styled.div`
