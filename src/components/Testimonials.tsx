@@ -161,8 +161,8 @@ const ImageGroup = styled.div`
 
 const Image = styled.img`
   object-fit: contain;
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   /* border: 1px solid black; */
   border-radius: 0.5rem;
   aspect-ratio: 16/9;

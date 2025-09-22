@@ -19,7 +19,7 @@ const translations = {
     consultation: "Get Consultation",
     
     // Hero
-    heroTitle: "Protecting Your Intellectual Property in Oman & worldwide",
+    heroTitle: "Protecting Your Intellectual Property in Oman & Worldwide",
     heroSubtitle: "Gulf Trade Marks & Commercial Data LLC - Your trusted partner for trademark registration, patent protection, and comprehensive IP monitoring services.",
     brandMonitoring: "Brand Monitoring",
     brandMonitoringDesc: "24/7 protection against counterfeit goods and trademark violations",

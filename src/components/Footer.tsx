@@ -29,7 +29,7 @@ const Footer = () => {
               <div className="w-64 h-12  rounded-lg flex items-center justify-center">
                <div className="flex items-center">
             <img
-              src="/Images/gulftradelogo.png"
+              src="/Images/finallogo.png"
               alt="Gulf Trade Marks Logo"
               className="h-42 w-auto"
             />
