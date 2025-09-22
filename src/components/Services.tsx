@@ -75,19 +75,10 @@ const Services = () => {
                   {service.featureKeys.map((featureKey, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className={`grid items-start text-sm text-muted-foreground gap-3 w-full ${language === 'ar' ? 'grid-cols-[1fr_auto] text-right' : 'grid-cols-[auto_1fr] text-left'}`}
+                      className={`flex items-start text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'flex-row-reverse text-right' : 'text-left'}`}
                     >
-                      {language === 'ar' ? (
-                        <>
-                          <span className="text-right">{t(featureKey)}</span>
-                          <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
-                          <span className="text-left">{t(featureKey)}</span>
-                        </>
-                      )}
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span className={language === 'ar' ? 'text-right' : 'text-left'}>{t(featureKey)}</span>
                     </li>
                   ))}
                 </ul>
