@@ -58,24 +58,26 @@ const Services = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className={`group hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-border/50 ${language === 'ar' ? 'text-right' : ''}`}>
-              <CardHeader className="pb-4">
-                <div className={`w-16 h-16 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 ${language === 'ar' ? 'ml-auto' : ''}`}>
+            <Card key={index} className={`group hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-border/50 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+              <CardHeader className={`pb-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                <div className={`w-16 h-16 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 ${language === 'ar' ? 'ml-auto mr-0' : 'mr-auto ml-0'}`}>
                   <service.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
-                <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <CardTitle className={`text-xl font-bold text-foreground group-hover:text-primary transition-colors ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t(service.titleKey)}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground mb-6 leading-relaxed">
+              <CardContent className={language === 'ar' ? 'text-right' : 'text-left'}>
+                <CardDescription className={`text-muted-foreground mb-6 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t(service.descKey)}
                 </CardDescription>
-                <ul className="space-y-2">
+                <ul className={`space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {service.featureKeys.map((featureKey, featureIndex) => (
-                    <li key={featureIndex} className={`flex items-center text-sm text-muted-foreground ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                      <div className={`w-2 h-2 bg-accent rounded-full flex-shrink-0 ${language === 'ar' ? 'ml-3' : 'mr-3'}`}></div>
-                      {t(featureKey)}
+                    <li key={featureIndex} className={`flex items-start text-sm text-muted-foreground ${language === 'ar' ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}>
+                      <div className={`w-2 h-2 bg-accent rounded-full flex-shrink-0 mt-2 ${language === 'ar' ? 'ml-3 mr-0' : 'mr-3 ml-0'}`}></div>
+                      <span className={language === 'ar' ? 'text-right' : 'text-left'}>
+                        {t(featureKey)}
+                      </span>
                     </li>
                   ))}
                 </ul>
