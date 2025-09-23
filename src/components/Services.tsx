@@ -71,7 +71,7 @@ const Services = () => {
                 <CardDescription className={`text-muted-foreground mb-6 leading-relaxed ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {t(service.descKey)}
                 </CardDescription>
-                <ul className={`space-y-2 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+                <ul dir={language === 'ar' ? 'rtl' : 'ltr'} className={`space-y-2 list-none ${language === 'ar' ? 'text-right' : 'text-left'}`}>
                   {service.featureKeys.map((featureKey, featureIndex) => (
                     <li
                       key={featureIndex}
