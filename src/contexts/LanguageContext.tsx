@@ -114,6 +114,12 @@ const translations = {
     email: "Email",
     businessHours: "Business Hours",
     businessHoursValue: "Sunday - Thursday: 8:00 AM - 6:00 PM\nFriday - Saturday: Closed",
+    
+    // Blog translations
+    loading: "Loading...",
+    blogPostError: "Failed to load blog post",
+    backToBlog: "Back to Blog",
+    published: "Published",
     needHelp: "Need Immediate Assistance?",
     needHelpDesc: "Our emergency IP protection hotline is available 24/7 for urgent trademark violations.",
     callEmergency: "Call Emergency Line",
@@ -259,6 +265,12 @@ const translations = {
     email: "البريد الإلكتروني",
     businessHours: "ساعات العمل",
     businessHoursValue: "الأحد - الخميس: 8:00 صباحاً - 6:00 مساءً\nالجمعة - السبت: مغلق",
+    
+    // Blog translations
+    loading: "جارٍ التحميل...",
+    blogPostError: "فشل في تحميل المقال",
+    backToBlog: "العودة إلى المدونة",
+    published: "تاريخ النشر",
     needHelp: "تحتاج مساعدة فورية؟",
     needHelpDesc: "خط المساعدة الطارئ لحماية الملكية الفكرية متاح على مدار الساعة طوال أيام الأسبوع للانتهاكات العاجلة للعلامات التجارية.",
     callEmergency: "اتصل بخط الطوارئ",
