@@ -127,28 +127,8 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "Client Testimonials",
-    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services",
-
-    // Footer
-    footerCompanyDesc: "Leading IP services company in Oman, protecting your assets with trademark, patent and monitoring solutions.",
-    footerOurServices: "Our Services",
-    footerQuickLinks: "Quick Links",
-    serviceTrademarkRegistration: "Trademark Registration",
-    servicePatentProtection: "Patent Protection",
-    serviceBrandMonitoring: "Brand Monitoring",
-    serviceIpConsultation: "IP Consultation",
-    serviceDesignProtection: "Design Protection",
-    serviceViolationResponse: "Violation Response",
-    aboutUs: "About Us",
-    ourServices: "Our Services",
-    contactUs: "Contact",
-    privacyPolicy: "Privacy Policy",
-    termsOfService: "Terms of Service",
-    emergencySupport: "Emergency Support",
-    footerLicensedBy: "Licensed by the Sultanate of Oman Ministry of Commerce & Industry",
-    footerCopyright: "© 2024 Gulf Trade Marks & Commercial Data LLC. All rights reserved.",
-    addressShort: "Al Khuwair, Sultanate of Oman"
-    },
+    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services"
+  },
   ar: {
     // Navigation
     home: "الرئيسية",
@@ -160,7 +140,7 @@ const translations = {
     
     // Hero
     heroTitle: "حماية الملكية الفكرية في عُمان",
-    heroSubtitle: "شركة الخليج للعلامات التجارية والبيانات التجارية المحدودة - شريكك الموثوق لتسجيل العلامات التجارية وحماية براءات الاختراع وخدمات مراقبة الملكية الفكرية الشاملة.",
+    heroSubtitle: "شركة الخليج للعلامات التجارية والبيانات التجارية  شريكك الموثوق لتسجيل العلامات التجارية وحماية براءات الاختراع وخدمات مراقبة الملكية الفكرية الشاملة.",
     brandMonitoring: "مراقبة العلامة التجارية",
     brandMonitoringDesc: "حماية على مدار الساعة ضد السلع المقلدة وانتهاكات العلامات التجارية",
     ipRegistration: "تسجيل الملكية الفكرية",
@@ -172,7 +152,7 @@ const translations = {
     
     // Services
     servicesTitle: "خدمات الملكية الفكرية الشاملة",
-    servicesSubtitle: "حماية الملكية الفكرية الخاصة بك بتقنية المراقبة المتطورة، والتوجيه القانوني المتخصص، والتغطية الشاملة عبر جميع الولايات القضائية.",
+    servicesSubtitle: "حماية الملكية الفكرية الخاصة بك بتقنية المراقبة المتطورة، والتوجيه القانوني المتخصص، والتغطية الشاملة في كل نطاقات السلطة القانونية.",
     trademarkMonitoring: "مراقبة العلامات التجارية",
     trademarkMonitoringDesc: "مراقبة شاملة لحقوق الملكية الفكرية مع تنبيهات فورية للانتهاكات المحتملة وأنشطة التقليد.",
     ipRegistrationServices: "خدمات تسجيل الملكية الفكرية",
@@ -180,9 +160,9 @@ const translations = {
     informationPortfolio: "محفظة المعلومات",
     informationPortfolioDesc: "مستودع رقمي آمن لجميع بيانات الملكية الفكرية والمواصفات والوثائق القانونية.",
     expertConsultationService: "استشارة الخبراء",
-    expertConsultationServiceDesc: "إرشاد مهني من متخصصي الملكية الفكرية المعتمدين الذين ينسقون مع الوكلاء المحليين والشبكات الدولية.",
+    expertConsultationServiceDesc:"إرشاد مهني من متخصّصي الملكية الفكرية المعتمدين بالتنسيق مع الوكلاء المحليين والشبكات الدولية.",
     violationProtection: "حماية من الانتهاكات",
-    violationProtectionDesc: "إجراءات استباقية لمنع استيراد السلع المقلدة والاستجابة السريعة لانتهاكات الحقوق.",
+    violationProtectionDesc: "إجراءات استباقية لمنع استيراد السلع المقلدة ونطاقات السلطة القانونية الحقوق.",
     internationalCoverage: "التغطية الدولية",
     internationalCoverageDesc: "حماية الملكية الفكرية العالمية مع تغطية شاملة عبر الأسواق والولايات القضائية الدولية.",
     
@@ -206,16 +186,16 @@ const translations = {
     counterfeitPrev: "منع التقليد",
     quickResponse: "استجابة سريعة",
     legalSupport: "دعم العمل القانوني",
-    rightsEnforcement: "إنفاذ الحقوق",
+    rightsEnforcement: "تطبيق الحقوق",
     globalReach: "الوصول العالمي",
-    multiJurisdiction: "متعدد الولايات القضائية",
+    multiJurisdiction:"تعدد نطاقات السلطة القانونية",
     internationalLaw: "القانون الدولي",
     crossBorderProt: "الحماية عبر الحدود",
     
     // About
     aboutTitle: "عن شركة الخليج للعلامات التجارية",
     aboutDescription: "شركة الخليج للعلامات التجارية والبيانات التجارية المحدودة هي شركة رائدة في خدمات الملكية الفكرية في سلطنة عُمان، متخصصة في تسجيل العلامات التجارية الشامل وحماية براءات الاختراع وخدمات مراقبة العلامة التجارية.",
-    aboutDescription2: "يعمل فريق المتخصصين المعتمدين لدينا على مدار الساعة لحماية أصول الملكية الفكرية القيمة من السلع المقلدة والاستخدام غير المصرح به. نحن ننسق مع الوكلاء المحليين ونحتفظ بشبكة دولية واسعة لضمان الحماية الشاملة.",
+    aboutDescription2: "يعمل فريق المتخصصين المعتمدين لدينا على مدار الساعة لحماية أصول الملكية الفكرية القيمة من السلع المقلدة والاستخدام الغير مصرح به. كما نقوم بالتنسيق مع الوكلاء المحليين ونحتفظ بشبكة دولية واسعة لضمان الحماية الشاملة.",
     yearsExp: "سنوات من الخبرة",
     trademarksProtected: "العلامات التجارية المحمية",
     countriesCovered: "البلدان المغطاة",
@@ -267,28 +247,8 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "شهادات العملاء",
-    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا",
-
-    // Footer
-    footerCompanyDesc: "شركة رائدة في خدمات الملكية الفكرية في عُمان، نحمي أصولك عبر حلول التسجيل والبراءات والمراقبة.",
-    footerOurServices: "خدماتنا",
-    footerQuickLinks: "روابط سريعة",
-    serviceTrademarkRegistration: "تسجيل العلامات التجارية",
-    servicePatentProtection: "حماية براءات الاختراع",
-    serviceBrandMonitoring: "مراقبة العلامة التجارية",
-    serviceIpConsultation: "استشارات الملكية الفكرية",
-    serviceDesignProtection: "حماية التصاميم",
-    serviceViolationResponse: "الاستجابة للانتهاكات",
-    aboutUs: "من نحن",
-    ourServices: "خدماتنا",
-    contactUs: "اتصل بنا",
-    privacyPolicy: "سياسة الخصوصية",
-    termsOfService: "شروط الخدمة",
-    emergencySupport: "دعم الطوارئ",
-    footerLicensedBy: "مرخص من وزارة التجارة والصناعة في سلطنة عُمان",
-    footerCopyright: "© 2024 شركة الخليج للعلامات التجارية والبيانات التجارية. جميع الحقوق محفوظة.",
-    addressShort: "الخوير، سلطنة عُمان"
-   }
+    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا"
+  }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
