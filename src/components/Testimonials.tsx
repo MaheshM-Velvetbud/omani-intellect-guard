@@ -1,15 +1,16 @@
 "use client"
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
-import { row1, row2 } from "./Data"; 
+import { row1, row2 } from "./Data";
+import { useLanguage } from "@/contexts/LanguageContext";
 const Moving = () => {
-    
+  const { language, t } = useLanguage();
     
   return (
     
     <AppContainer>
     <Wrapper>
-      <Text>Our Partners are Associated with
+      <Text language={language}>{t("partnersTitle")}
       </Text>
       {/* <Note>Revolutionize your Business with Our Advanced Technology Solutions</Note> */}
       <Marquee>
@@ -83,12 +84,13 @@ const Wrapper = styled.div`
 //   text-4xl md:text-5xl font-bold mb-6 text-foreground
   
 // `;
-const Text = styled.div`
+const Text = styled.div<{ language: string }>`
   font-size: clamp(1.5rem, 4vw, 3.75rem); /* Responsive font size */
   font-weight: 600;
   margin-bottom: 10px;
   color: #02203c;
-  text-4xl md:text-5xl font-bold mb-6 text-foreground
+  text-align: ${props => props.language === 'ar' ? 'right' : 'left'};
+  direction: ${props => props.language === 'ar' ? 'rtl' : 'ltr'};
 
   @media (max-width: 640px) {
     font-size: 1.5rem; /* Smaller size for small screens */

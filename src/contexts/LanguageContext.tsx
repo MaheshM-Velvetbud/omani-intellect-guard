@@ -127,7 +127,32 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "Client Testimonials",
-    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services"
+    testimonialsSubtitle: "Hear what our clients say about our professional IP protection services",
+    partnersTitle: "Our Partners are Associated with",
+    
+    // Footer
+    footerCompanyDesc: "Gulf Trade Marks & Commercial Data LLC is your trusted partner for comprehensive intellectual property protection services in Oman and worldwide.",
+    addressShort: "Al Khuwair, Sultanate of Oman",
+    footerOurServices: "Our Services",
+    footerQuickLinks: "Quick Links",
+    footerCopyright: "© 2024 Gulf Trade Marks & Commercial Data LLC. All rights reserved.",
+    footerLicensedBy: "Licensed by Ministry of Commerce, Industry and Investment Promotion",
+    
+    // Service items for footer
+    serviceTrademarkRegistration: "Trademark Registration",
+    servicePatentProtection: "Patent Protection", 
+    serviceBrandMonitoring: "Brand Monitoring",
+    serviceIpConsultation: "IP Consultation",
+    serviceDesignProtection: "Design Protection",
+    serviceViolationResponse: "Violation Response",
+    
+    // Quick links for footer
+    aboutUs: "About Us",
+    ourServices: "Our Services",
+    contactUs: "Contact Us", 
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    emergencySupport: "Emergency Support"
   },
   ar: {
     // Navigation
@@ -247,7 +272,32 @@ const translations = {
     
     // Testimonials
     testimonialsTitle: "شهادات العملاء",
-    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا"
+    testimonialsSubtitle: "اسمع ما يقوله عملاؤنا حول خدمات حماية الملكية الفكرية المهنية لدينا",
+    partnersTitle: "شركاؤنا مرتبطون بـ",
+    
+    // Footer
+    footerCompanyDesc: "شركة الخليج للعلامات التجارية والبيانات التجارية المحدودة هي شريكك الموثوق للخدمات الشاملة لحماية الملكية الفكرية في عُمان وحول العالم.",
+    addressShort: "الخوير، سلطنة عُمان",
+    footerOurServices: "خدماتنا",
+    footerQuickLinks: "روابط سريعة",
+    footerCopyright: "© 2024 شركة الخليج للعلامات التجارية والبيانات التجارية المحدودة. جميع الحقوق محفوظة.",
+    footerLicensedBy: "مرخصة من وزارة التجارة والصناعة وترويج الاستثمار",
+    
+    // Service items for footer
+    serviceTrademarkRegistration: "تسجيل العلامات التجارية",
+    servicePatentProtection: "حماية براءات الاختراع",
+    serviceBrandMonitoring: "مراقبة العلامة التجارية", 
+    serviceIpConsultation: "استشارة الملكية الفكرية",
+    serviceDesignProtection: "حماية التصاميم",
+    serviceViolationResponse: "الاستجابة للانتهاكات",
+    
+    // Quick links for footer
+    aboutUs: "عن الشركة",
+    ourServices: "خدماتنا",
+    contactUs: "اتصل بنا",
+    privacyPolicy: "سياسة الخصوصية", 
+    termsOfService: "شروط الخدمة",
+    emergencySupport: "الدعم الطارئ"
   }
 };
 
