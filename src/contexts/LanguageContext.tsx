@@ -288,7 +288,8 @@ const translations = {
     partnersTitle: "شركاؤنا مرتبطون بـ",
     
     // Footer
-    footerCompanyDesc: "شركة الخليج للعلامات التجارية والبيانات التجارية هي شريكك الموثوق للخدمات الشاملة",
+    footerCompanyDesc: " شركة الخليج للعلامات التجارية والبيانات التجارية هي شريكك الموثوق للخدمات الشاملة",
+   
     addressShort: "الخوير، سلطنة عُمان",
     footerOurServices: "خدماتنا",
     footerQuickLinks: "روابط سريعة",
