@@ -195,7 +195,7 @@ const translations = {
     violationProtection: "حماية من الانتهاكات",
     violationProtectionDesc: "إجراءات استباقية لمنع استيراد السلع المقلدة ونطاقات السلطة القانونية الحقوق.",
     internationalCoverage: "التغطية الدولية",
-    internationalCoverageDesc: "حماية الملكية الفكرية العالمية مع تغطية شاملة عبر الأسواق  ونطاقات السلطة القانونية.",
+    internationalCoverageDesc: "حماية الملكية الفكرية العالمية مع تغطية شاملة عبر الأسواق ونطاقات السلطة القانونية",
     
     // Service Features
     monitoring247: "مراقبة على مدار الساعة",
@@ -288,11 +288,11 @@ const translations = {
     partnersTitle: "شركاؤنا مرتبطون بـ",
     
     // Footer
-    footerCompanyDesc: "شركة الخليج للعلامات التجارية والبيانات التجارية  هي شريكك الموثوق للخدمات الشاملة لحماية الملكية الفكرية في عُمان وحول العالم.",
+    footerCompanyDesc: "شركة الخليج للعلامات التجارية والبيانات التجارية هي شريكك الموثوق للخدمات الشاملة",
     addressShort: "الخوير، سلطنة عُمان",
     footerOurServices: "خدماتنا",
     footerQuickLinks: "روابط سريعة",
-    footerCopyright: "© 2024 شركة الخليج للعلامات التجارية والبيانات التجارية . جميع الحقوق محفوظة.",
+    footerCopyright: "© 2024 شركة الخليج للعلامات التجارية والبيانات التجارية  جميع الحقوق محفوظة.",
     footerLicensedBy: "مرخصة من وزارة التجارة والصناعة وترويج الاستثمار",
     
     // Service items for footer
