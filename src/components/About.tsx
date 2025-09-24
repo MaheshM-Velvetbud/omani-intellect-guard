@@ -26,31 +26,8 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className={`grid lg:grid-cols-2 gap-16 items-center ${language === 'ar' ? 'lg:grid-cols-2' : ''}`}>
-            {/* Content */}
-            <div className={language === 'ar' ? 'text-right lg:order-2' : ''}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                {t("aboutTitle")}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {t("aboutDescription")}
-              </p>
-              
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {t("aboutDescription2")}
-              </p>
-
-              <div className="space-y-4 mb-8">
-                {achievementKeys.map((achievementKey, index) => (
-                  <div key={index} className={`flex items-center ${language === 'ar' ? 'flex-row-reverse space-x-reverse space-x-3' : 'space-x-3'}`}>
-                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
-                    <span className="text-muted-foreground">{t(achievementKey)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Stats and Features */}
-            <div className={`space-y-8 ${language === 'ar' ? 'lg:order-1' : ''}`}>
+            {/* Stats and Features - Left side in Arabic, Right side in English */}
+            <div className={`space-y-8 ${language === 'ar' ? 'lg:order-1' : 'lg:order-2'}`}>
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat, index) => (
@@ -84,6 +61,29 @@ const About = () => {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+
+            {/* Content - Right side in Arabic, Left side in English */}
+            <div className={language === 'ar' ? 'text-right lg:order-2' : 'lg:order-1'}>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                {t("aboutTitle")}
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                {t("aboutDescription")}
+              </p>
+              
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                {t("aboutDescription2")}
+              </p>
+
+              <div className="space-y-4 mb-8">
+                {achievementKeys.map((achievementKey, index) => (
+                  <div key={index} className={`flex items-center ${language === 'ar' ? 'flex-row-reverse space-x-reverse space-x-3 justify-start' : 'space-x-3'}`}>
+                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+                    <span className="text-muted-foreground">{t(achievementKey)}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
