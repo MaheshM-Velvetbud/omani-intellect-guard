@@ -32,7 +32,7 @@ const Footer = () => {
               <div className="w-64 h-12  rounded-lg flex items-center justify-center">
                <div className="flex items-center">
             <img
-              src="/Images/finallogo.png"
+              src={language === 'ar' ? "/Images/arabiclogo.png" : "/Images/finallogo.png"}
               alt="Gulf Trade Marks Logo"
               className="h-42 w-auto"
             />
@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground/90">(+968) 24784640</span>
+                <span className="text-primary-foreground/90" dir="ltr">(+968) 24784640</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent" />

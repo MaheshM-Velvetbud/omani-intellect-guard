@@ -28,7 +28,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="/Images/finallogo.png"
+              src={language === 'ar' ? "/Images/arabiclogo.png" : "/Images/finallogo.png"}
               alt="Gulf Trade Marks Logo"
               className="h-32 md:h-24  w-auto"
             />
