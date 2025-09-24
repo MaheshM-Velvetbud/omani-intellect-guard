@@ -170,7 +170,7 @@ const translations = {
     consultation: "احصل على استشارة",
     
     // Hero
-    heroTitle: "حماية الملكية الفكرية في عُمان",
+    heroTitle: "حماية الملكية الفكرية  في سلطنة عمان وجميع أنحاء العالم ",
     heroSubtitle: "شركة الخليج للعلامات التجارية والبيانات التجارية  شريكك الموثوق لتسجيل العلامات التجارية وحماية براءات الاختراع وخدمات مراقبة الملكية الفكرية الشاملة.",
     brandMonitoring: "مراقبة العلامة التجارية",
     brandMonitoringDesc: "حماية على مدار الساعة ضد السلع المقلدة وانتهاكات العلامات التجارية",
@@ -314,28 +314,28 @@ const translations = {
   }
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+  const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const [language, setLanguage] = useState<Language>('en');
 
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations['en']] || key;
+    const t = (key: string): string => {
+      return translations[language][key as keyof typeof translations['en']] || key;
+    };
+
+    return (
+      <LanguageContext.Provider value={{ language, setLanguage, t }}>
+        <div className={`${language === 'ar' ? 'rtl' : 'ltr'} ${language === 'ar' ? 'font-arabic' : ''}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
+          {children}
+        </div>
+      </LanguageContext.Provider>
+    );
   };
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <div className={`${language === 'ar' ? 'rtl' : 'ltr'} ${language === 'ar' ? 'font-arabic' : ''}`} dir={language === 'ar' ? 'rtl' : 'ltr'}>
-        {children}
-      </div>
-    </LanguageContext.Provider>
-  );
-};
-
-export const useLanguage = (): LanguageContextType => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};
+  export const useLanguage = (): LanguageContextType => {
+    const context = useContext(LanguageContext);
+    if (context === undefined) {
+      throw new Error('useLanguage must be used within a LanguageProvider');
+    }
+    return context;
+  };

@@ -22,7 +22,7 @@ const Services = () => {
       icon: Database,
       titleKey: "informationPortfolio",
       descKey: "informationPortfolioDesc",
-      featureKeys: ["secureStorage", "easyAccess", "docManagement", ]
+      featureKeys: ["secureStorage", "easyAccess", "docManagement"]
     },
     {
       icon: Users,
@@ -75,9 +75,11 @@ const Services = () => {
                   {service.featureKeys.map((featureKey, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className={`flex items-start text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'flex-row-reverse text-right' : 'text-left'}`}
+                      className={`flex items-center text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}
                     >
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span
+                        className={`w-2 h-2 rounded-full mt-1  flex-shrink-0 ${language === 'ar' ? 'bg--400' : 'bg-accent'}`}
+                      ></span>
                       <span className={language === 'ar' ? 'text-right' : 'text-left'}>{t(featureKey)}</span>
                     </li>
                   ))}

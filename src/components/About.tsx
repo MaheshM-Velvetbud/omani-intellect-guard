@@ -27,7 +27,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className={`grid lg:grid-cols-2 gap-16 items-center ${language === 'ar' ? 'lg:grid-cols-2' : ''}`}>
             {/* Stats and Features - Left side in Arabic, Right side in English */}
-            <div className={`space-y-8 ${language === 'ar' ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div className={`space-y-8 ${language === 'ar' ? 'lg:order-2' : 'lg:order-2'}`}>
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6">
                 {stats.map((stat, index) => (
@@ -65,7 +65,7 @@ const About = () => {
             </div>
 
             {/* Content - Right side in Arabic, Left side in English */}
-            <div className={language === 'ar' ? 'text-right lg:order-2' : 'lg:order-1'}>
+            <div className={language === 'ar' ? 'text-right lg:order-1' : 'lg:order-1'}>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                 {t("aboutTitle")}
               </h2>
