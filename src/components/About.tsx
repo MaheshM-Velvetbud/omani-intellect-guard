@@ -77,14 +77,29 @@ const About = () => {
                 {t("aboutDescription2")}
               </p>
 
-              <div className="space-y-4 mb-8">
-                {achievementKeys.map((achievementKey, index) => (
-                  <div key={index} className={`flex items-center ${language === 'ar' ? 'flex-row-reverse space-x-reverse space-x-3 justify-start' : 'space-x-3'}`}>
-                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
-                    <span className="text-muted-foreground">{t(achievementKey)}</span>
-                  </div>
-                ))}
-              </div>
+            <div className="space-y-4 mb-8" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+  {achievementKeys.map((achievementKey, index) => (
+    <div
+      key={index}
+      className="flex items-center space-x-3"
+    >
+      {language === 'ar' ? (
+        <>
+        <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+          <span className="text-muted-foreground">{t(achievementKey)}</span>
+          {/* <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" /> */}
+        </>
+      ) : (
+        <>
+          <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
+          <span className="text-muted-foreground">{t(achievementKey)}</span>
+        </>
+      )}
+    </div>
+  ))}
+</div> 
+
+
             </div>
           </div>
         </div>

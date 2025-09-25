@@ -162,8 +162,8 @@ const translations = {
   },
   ar: {
     // Navigation
-    home: "الرئيسية",
-    services: "الخدمات",
+    home: "    الرئيسية  ",
+    services: "    الخدمات     ",
     about: "عن الشركة", 
     blog: "المدونة",
     contact: "اتصل بنا",

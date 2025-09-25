@@ -35,12 +35,12 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-12">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground px-2 hover:text-primary transition-colors font-medium"
               >
                 {item.name}
               </a>
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button variant="outline" size="sm" className="gap-4 ">
                   <Languages className="w-4 h-4" />
                   {language === 'en' ? 'EN' : 'AR'}
                 </Button>

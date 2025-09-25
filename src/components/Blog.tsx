@@ -10,7 +10,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('https://strapi.velvetbud.in/api/gulftrade-blogposts?populate=*');
+        const response = await fetch('https://strapi.gtmcd.com/api/gulftrade-blogposts?populate=*');
         const data = await response.json();
         setPosts(data.data);
         setLoading(false);
@@ -36,7 +36,7 @@ const Blog = () => {
           >
             {post.image && post.image[0] && (
               <img
-                src={`https://strapi.velvetbud.in${post.image[0].url}`}
+                src={`https://strapi.gtmcd.com${post.image[0].url}`}
                 alt={post.title}
                 className="w-full h-64 object-cover"
               />

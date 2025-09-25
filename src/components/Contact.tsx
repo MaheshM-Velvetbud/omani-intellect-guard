@@ -126,55 +126,82 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-                    <h4 className="font-semibold text-foreground mb-1">{t("address")}</h4>
-                    <p className="text-muted-foreground whitespace-pre-line">
-                      {t("addressValue")}
-                    </p>
-                  </div>
-                </div>
+              <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+  {language !== 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <MapPin className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+    <h4 className="font-semibold text-foreground mb-1">{t("address")}</h4>
+    <p className="text-muted-foreground whitespace-pre-line">{t("addressValue")}</p>
+  </div>
+  {language === 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <MapPin className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+</div>
                 
-                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-                    <h4 className="font-semibold text-foreground mb-1">{t("phoneNumbers")}</h4>
-                    <p className="text-muted-foreground">
-                      (+968) 24784640<br />
-                      (+968) 24796217<br />
-                      (+968) 24485848
-                    </p>
-                  </div>
-                </div>
                 
-                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-                    <h4 className="font-semibold text-foreground mb-1">{t("email")}</h4>
-                    <p className="text-muted-foreground">
-                      Rayeez@rajbasso.com
-                    </p>
-                  </div>
-                </div>
+               <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+  {language !== 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Phone className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+    <h4 className="font-semibold text-foreground mb-1">{t("phoneNumbers")}</h4>
+    <p className="text-muted-foreground" dir="ltr">
+      (+968) 24784640<br />
+      (+968) 24796217<br />
+      (+968) 24485848
+    </p>
+  </div>
+  {language === 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Phone className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+</div>
                 
-                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse' : ''}`}>
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-                    <h4 className="font-semibold text-foreground mb-1">{t("businessHours")}</h4>
-                    <p className="text-muted-foreground whitespace-pre-line">
-                      {t("businessHoursValue")}
-                    </p>
-                  </div>
-                </div>
+                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+  {language !== 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Mail className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+    <h4 className="font-semibold text-foreground mb-1">{t("email")}</h4>
+    <p className="text-muted-foreground">
+      Rayeez@rajbasso.com
+    </p>
+  </div>
+  {language === 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Mail className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+</div>
+                
+               <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+  {language !== 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Clock className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+    <h4 className="font-semibold text-foreground mb-1">{t("businessHours")}</h4>
+    <p className="text-muted-foreground whitespace-pre-line">
+      {t("businessHoursValue")}
+    </p>
+  </div>
+  {language === 'ar' && (
+    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+      <Clock className="w-6 h-6 text-primary-foreground" />
+    </div>
+  )}
+</div>
               </CardContent>
             </Card>
 

@@ -16,7 +16,7 @@ const BlogPost = () => {
        useEffect(() => {
          const fetchPost = async () => {
            try {
-             const response = await fetch(`https://strapi.velvetbud.in/api/gulftrade-blogposts?filters[documentId][$eq]=${documentId}&populate=*`);
+             const response = await fetch(`https://strapi.gtmcd.com/api/gulftrade-blogposts?filters[documentId][$eq]=${documentId}&populate=*`);
              const data = await response.json();
              if (data.data.length > 0) {
                setPost(data.data[0]);
@@ -54,7 +54,7 @@ const BlogPost = () => {
             {/* Hero Section */}
             <div className="relative mb-8">
               <img
-                src={`https://strapi.velvetbud.in${post.image[0].url}`}
+                src={`https://strapi.gtmcd.com${post.image[0].url}`}
                 alt={post.title}
                 className="w-full h-[500px] object-cover rounded-xl shadow-xl transition duration-300 hover:shadow-2xl"
               />

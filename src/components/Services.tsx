@@ -72,18 +72,41 @@ const Services = () => {
                   {t(service.descKey)}
                 </CardDescription>
                 <ul dir={language === 'ar' ? 'rtl' : 'ltr'} className={`space-y-2 list-none ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-                  {service.featureKeys.map((featureKey, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className={`flex items-center text-sm text-muted-foreground gap-3 ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}
-                    >
-                      <span
-                        className={`w-2 h-2 rounded-full mt-1  flex-shrink-0 ${language === 'ar' ? 'bg--400' : 'bg-accent'}`}
-                      ></span>
-                      <span className={language === 'ar' ? 'text-right' : 'text-left'}>{t(featureKey)}</span>
-                    </li>
-                  ))}
-                </ul>
+                  
+    {service.featureKeys.map((featureKey, featureIndex) => (
+  <li
+    key={featureIndex}
+    // Combined flex properties and conditional classes for justification and order
+    className={`flex items-center text-sm text-muted-foreground gap-3 mt-1 ${
+      language === 'ar' 
+        ? 'justify-end flex-row-reverse' // Justify right and reverse child order for RTL
+        : 'justify-start'                 // Justify left (default order) for LTR
+    }`}
+  >
+    {/* The bullet/dot - Note: Removed 'mt-1' here and moved it to the <li> */}
+    { 
+    <span
+      className={`w-2 h-2 rounded-full ${
+        language === 'ar' ? '' : 'bg-accent'
+      }`}
+    ></span>
+    }
+    {/* The feature key text */}
+    <span
+      // Text alignment is often handled by the parent's justification, 
+      // but explicitly setting 'text-right' for 'ar' is a good safety measure.
+      className={language === 'ar' ? 'text-right' : 'text-left'}
+    >
+      {t(featureKey)}
+       
+    </span>
+     <span
+      className={`w-2 h-2 rounded-full ${
+        language === 'ar' ? 'bg-yellow-400' : ''
+      }`}
+    ></span>
+  </li>
+))}          </ul>
               </CardContent>
             </Card>
           ))}
