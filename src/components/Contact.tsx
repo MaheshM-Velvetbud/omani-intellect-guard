@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { language, t } = useLanguage();
@@ -14,18 +15,58 @@ const Contact = () => {
     name: "",
     email: "",
     company: "",
-    message: ""
+    message: "",
+    title: "" // Added to match the {{title}} parameter
   });
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to your backend
-    toast({
-      title: t("messageSent"),
-      description: t("messageSentDesc"),
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+
+    // Basic email validation
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+    if (!isValidEmail) {
+      toast({
+        title: t("error"),
+        description: t("invalidEmail"),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Prepare data for EmailJS with all template parameters
+    const emailData = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company || "N/A",
+      message: formData.message,
+      title: formData.title || "Contact Form Submission", // Default value if title is empty
+      time: new Date().toLocaleString() // Adds current timestamp
+    };
+
+    // Send email using EmailJS with hardcoded values
+    emailjs
+      .send(
+        "service_fywoueu", // Service ID from screenshot
+        "template_wuk7shb", // Template ID from screenshot
+        emailData,
+        "94oNeLqYid33b_OmV" // Replace with your actual EmailJS User ID
+      )
+      .then(() => {
+        toast({
+          title: t("messageSent"),
+          description: t("messageSentDesc"),
+        });
+        setFormData({ name: "", email: "", company: "", message: "", title: "" });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error); // Log error for debugging
+        toast({
+          title: t("error"),
+          description: t("errorSendingMessage"),
+          variant: "destructive",
+        });
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -97,6 +138,17 @@ const Contact = () => {
                   />
                 </div>
                 <div className="space-y-2">
+                  <Label htmlFor="title" className={language === 'ar' ? 'text-right block' : ''}>{t("title")} (Optional)</Label>
+                  <Input
+                    id="title"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                    placeholder={t("titlePlaceholder") || "Enter a title"}
+                    className={language === 'ar' ? 'text-right' : ''}
+                  />
+                </div>
+                <div className="space-y-2">
                   <Label htmlFor="message" className={language === 'ar' ? 'text-right block' : ''}>{t("message")} *</Label>
                   <Textarea
                     id="message"
@@ -126,82 +178,78 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-              <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
-  {language !== 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <MapPin className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-    <h4 className="font-semibold text-foreground mb-1">{t("address")}</h4>
-    <p className="text-muted-foreground whitespace-pre-line">{t("addressValue")}</p>
-  </div>
-  {language === 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <MapPin className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-</div>
-                
-                
-               <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
-  {language !== 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Phone className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-    <h4 className="font-semibold text-foreground mb-1">{t("phoneNumbers")}</h4>
-    <p className="text-muted-foreground" dir="ltr">
-      (+968) 24784640<br />
-      (+968) 24796217<br />
-      (+968) 24485848
-    </p>
-  </div>
-  {language === 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Phone className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-</div>
-                
                 <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
-  {language !== 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Mail className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-    <h4 className="font-semibold text-foreground mb-1">{t("email")}</h4>
-    <p className="text-muted-foreground">
-      Rayeez@rajbasso.com
-    </p>
-  </div>
-  {language === 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Mail className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-</div>
-                
-               <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
-  {language !== 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Clock className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
-    <h4 className="font-semibold text-foreground mb-1">{t("businessHours")}</h4>
-    <p className="text-muted-foreground whitespace-pre-line">
-      {t("businessHoursValue")}
-    </p>
-  </div>
-  {language === 'ar' && (
-    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
-      <Clock className="w-6 h-6 text-primary-foreground" />
-    </div>
-  )}
-</div>
+                  {language !== 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+                    <h4 className="font-semibold text-foreground mb-1">{t("address")}</h4>
+                    <p className="text-muted-foreground whitespace-pre-line">{t("addressValue")}</p>
+                  </div>
+                  {language === 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                </div>
+                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+                  {language !== 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+                    <h4 className="font-semibold text-foreground mb-1">{t("phoneNumbers")}</h4>
+                    <p className="text-muted-foreground" dir="ltr">
+                      (+968) 24784640<br />
+                      (+968) 24796217<br />
+                      (+968) 24485848
+                    </p>
+                  </div>
+                  {language === 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                </div>
+                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+                  {language !== 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+                    <h4 className="font-semibold text-foreground mb-1">{t("email")}</h4>
+                    <p className="text-muted-foreground">
+                      Rayeez@rajbasso.com
+                    </p>
+                  </div>
+                  {language === 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                </div>
+                <div className={`flex items-start ${language === 'ar' ? 'flex-row-reverse justify-end' : 'justify-start'}`}>
+                  {language !== 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                  <div className={`${language === 'ar' ? 'text-right pr-4' : 'ml-4'}`}>
+                    <h4 className="font-semibold text-foreground mb-1">{t("businessHours")}</h4>
+                    <p className="text-muted-foreground whitespace-pre-line">
+                      {t("businessHoursValue")}
+                    </p>
+                  </div>
+                  {language === 'ar' && (
+                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                  )}
+                </div>
               </CardContent>
             </Card>
 

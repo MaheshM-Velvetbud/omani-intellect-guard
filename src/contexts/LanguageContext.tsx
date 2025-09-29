@@ -311,6 +311,7 @@ const translations = {
     privacyPolicy: "سياسة الخصوصية", 
     termsOfService: "شروط الخدمة",
     emergencySupport: "الدعم الطارئ"
+    
   }
 };
 
