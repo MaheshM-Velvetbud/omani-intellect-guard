@@ -65,10 +65,10 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            
-            <Button className="bg-gradient-primary hover:opacity-90 font-semibold">
+            <a href="#contact">   <Button className="bg-gradient-primary hover:opacity-90 font-semibold">
               {t("consultation")}
-            </Button>
+            </Button></a>
+          
           </div>
 
           {/* Mobile Menu Button */}

@@ -1,33 +1,44 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { language, t } = useLanguage(); // Access language and t function
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('https://strapi.gtmcd.com/api/gulftrade-blogposts?populate=*');
+        const apiUrl =
+          language === 'ar'
+            ? 'https://strapi.gtmcd.com/api/arabic-blogposts?populate=*'
+            : 'https://strapi.gtmcd.com/api/gulftrade-blogposts?populate=*';
+        
+        const response = await fetch(apiUrl);
         const data = await response.json();
         setPosts(data.data);
         setLoading(false);
       } catch (err) {
-        setError('Failed to fetch blog posts');
+        setError(t('blogFetchError') || 'Failed to fetch blog posts');
         setLoading(false);
       }
     };
     fetchPosts();
-  }, []);
+  }, [language, t]);
 
-  if (loading) return <div className="text-center text-2xl mt-8">Loading...</div>;
+  if (loading) return <div className="text-center text-2xl mt-8">{t('loading') || 'Loading...'}</div>;
   if (error) return <div className="text-center text-red-500 text-2xl mt-8">{error}</div>;
 
   return (
     <div className="container mx-auto py-32 px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-12">Blog Posts</h1>
+      <h1 className="text-4xl font-bold text-center mb-12">
+        {t('blogPosts') || (language === 'ar' ? 'المدونات' : 'Blog Posts')}
+      </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div
@@ -43,7 +54,7 @@ const Blog = () => {
             )}
             <div className="p-6">
               <p className="text-sm text-gray-500 mb-2">
-                {new Date(post.date).toLocaleDateString('en-US', {
+                {new Date(post.date).toLocaleDateString(language === 'ar' ? 'ar-EG' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
@@ -57,7 +68,7 @@ const Blog = () => {
                 onClick={() => navigate(`/blog/${post.documentId}`)}
                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200"
               >
-                Read More
+                {t('readMore') || (language === 'ar' ? 'اقرأ المزيد' : 'Read More')}
               </button>
             </div>
           </div>
